@@ -1,12 +1,9 @@
 import { motion } from 'framer-motion';
 import { FaSchool, FaUserGraduate, FaChartBar, FaSms, FaChalkboardTeacher, FaUsers, FaCheckCircle, FaRegStar, FaRocket, FaLock, FaMobileAlt, FaEnvelope, FaGlobe, FaCogs } from 'react-icons/fa';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/swiper-bundle.css';
 
 const navLinks = [
   { label: 'Home', href: '#' },
