@@ -176,7 +176,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="bg-[#0a0a23] min-h-screen font-sans text-gray-100">
+    <div className="bg-[#0a0a23] min-h-screen font-sans text-gray-100 w-full overflow-hidden">
       {/* Sticky Navbar */}
       <header className="sticky top-0 z-50 bg-[#0a0a23]/80 backdrop-blur border-b border-[#18182f]">
         <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
