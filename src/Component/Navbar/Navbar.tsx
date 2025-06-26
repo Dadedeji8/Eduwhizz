@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import logo from '../../assets/imgs/EDUWIZZMain.png'
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router';
 // Navigation Component
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +37,8 @@ const Navigation = () => {
                     </div>
 
                     <button className="hidden md:block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200 transform hover:scale-105">
-                        Get Started
+                        <Link to='https://edebims.com.ng/login1.php'>Get Started</Link>
+
                     </button>
 
                     <button
@@ -63,7 +65,8 @@ const Navigation = () => {
                             </a>
                         ))}
                         <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 rounded-full">
-                            Get Started
+                            <Link to='https://edebims.com.ng/login1.php'>  Get Started</Link>
+
                         </button>
                     </div>
                 </div>
