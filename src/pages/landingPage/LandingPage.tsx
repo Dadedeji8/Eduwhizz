@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaSchool, FaUserGraduate, FaChartBar, FaSms, FaChalkboardTeacher, FaUsers, FaCheckCircle, FaRegStar, FaRocket, FaLock, FaMobileAlt, FaEnvelope, FaGlobe, FaCogs, FaBars, FaTimes } from 'react-icons/fa';
+import { FaSchool, FaUserGraduate, FaChartBar, FaSms, FaChalkboardTeacher, FaUsers, FaCheckCircle, FaRegStar, FaRocket, FaLock, FaMobileAlt, FaEnvelope, FaGlobe, FaCogs, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
@@ -19,6 +19,70 @@ import learnMoreAnimation from '../../assets/lottie/Learn More.json';
 import downPaymentAnimation from '../../assets/lottie/Down Payment.json';
 import cloudAnimation from '../../assets/lottie/cloud.json';
 import arrowBottomAnimation from '../../assets/lottie/Arrow Bottom.json';
+
+// WhatsApp utility function
+const openWhatsApp = (template: string) => {
+  const phoneNumber = '+2349037598947';
+  const encodedMessage = encodeURIComponent(template);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  window.open(whatsappUrl, '_blank');
+};
+
+// WhatsApp message templates
+const whatsappTemplates = {
+  startFreeTrial: `Hello! I'm interested in starting a free trial of EduWhizz for my school. 
+
+Could you please provide more information about:
+• How the free trial works
+• What features are included
+• Duration of the trial period
+• Next steps to get started
+
+Thank you!`,
+  
+  bookDemo: `Hello! I'd like to book a demo of EduWhizz for my school.
+
+Please help me schedule a demonstration to see:
+• Platform features and capabilities
+• How it can benefit our school
+• Pricing and implementation process
+• Any special requirements
+
+Looking forward to learning more about EduWhizz!`,
+  
+  getStarted: (planName: string) => `Hello! I'm interested in getting started with EduWhizz ${planName} plan.
+
+Please provide information about:
+• How to sign up for the ${planName} plan
+• Pricing details and payment options
+• Implementation timeline
+• Training and support available
+
+Thank you!`,
+  
+  subscribe: `Hello! I'd like to subscribe to EduWhizz updates and newsletters.
+
+Please add me to your mailing list to receive:
+• Latest features and updates
+• Educational insights and tips
+• Special offers and promotions
+• Industry news and best practices
+
+Thank you!`,
+  
+  contact: (name: string = '', email: string = '', subject: string = '', message: string = '') => {
+    const contactInfo = name || email ? `\n\nContact Information:
+${name ? `Name: ${name}` : ''}
+${email ? `Email: ${email}` : ''}` : '';
+    
+    return `Hello! I have an inquiry about EduWhizz.
+
+${subject ? `Subject: ${subject}` : 'General Inquiry'}
+${message ? `\n\nMessage: ${message}` : ''}${contactInfo}
+
+Please get back to me with more information. Thank you!`;
+  }
+};
 
 const navLinks = [
   { label: 'Home', href: '#' },
@@ -184,9 +248,34 @@ const gradientText = "bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 
 
 const LandingPage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = whatsappTemplates.contact(
+      contactForm.name,
+      contactForm.email,
+      contactForm.subject,
+      contactForm.message
+    );
+    openWhatsApp(message);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setContactForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
@@ -297,15 +386,19 @@ const LandingPage = () => {
             <motion.button
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.97 }}
-              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition"
+              onClick={() => openWhatsApp(whatsappTemplates.startFreeTrial)}
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition flex items-center justify-center gap-2"
             >
+              <FaWhatsapp className="text-xl" />
               Start Free Trial
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.97 }}
-              className="bg-white/10 hover:bg-white/20 text-cyan-300 font-bold py-3 px-8 rounded-lg text-lg border border-cyan-400 transition"
+              onClick={() => openWhatsApp(whatsappTemplates.bookDemo)}
+              className="bg-white/10 hover:bg-white/20 text-cyan-300 font-bold py-3 px-8 rounded-lg text-lg border border-cyan-400 transition flex items-center justify-center gap-2"
             >
+              <FaWhatsapp className="text-xl" />
               Book a Demo
             </motion.button>
           </div>
@@ -682,7 +775,13 @@ const LandingPage = () => {
                     <li key={j} className="flex items-center"><FaCheckCircle className="text-cyan-400 mr-2" />{f}</li>
                   ))}
                 </ul>
-                <button className={`w-full py-3 rounded-lg font-bold transition-all duration-300 text-sm md:text-base ${plan.highlight ? 'bg-cyan-500 text-white hover:bg-cyan-600' : 'bg-white/10 text-cyan-300 border border-cyan-400 hover:bg-white/20'}`}>Get Started</button>
+                <button 
+                  onClick={() => openWhatsApp(whatsappTemplates.getStarted(plan.name))}
+                  className={`w-full py-3 rounded-lg font-bold transition-all duration-300 text-sm md:text-base flex items-center justify-center gap-2 ${plan.highlight ? 'bg-cyan-500 text-white hover:bg-cyan-600' : 'bg-white/10 text-cyan-300 border border-cyan-400 hover:bg-white/20'}`}
+                >
+                  <FaWhatsapp className="text-lg" />
+                  Get Started
+                </button>
               </motion.div>
             ))}
           </div>
@@ -708,7 +807,13 @@ const LandingPage = () => {
               placeholder="Email address"
               className="border border-cyan-700 bg-[#18182f] text-cyan-200 rounded-lg px-4 py-3 flex-1 focus:outline-none focus:ring-2 focus:ring-cyan-400 text-sm md:text-base"
             />
-            <button className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-6 md:px-8 py-3 rounded-lg transition text-sm md:text-base">Subscribe</button>
+            <button 
+              onClick={() => openWhatsApp(whatsappTemplates.subscribe)}
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-6 md:px-8 py-3 rounded-lg transition text-sm md:text-base flex items-center justify-center gap-2"
+            >
+              <FaWhatsapp className="text-lg" />
+              Subscribe
+            </button>
           </form>
           <p className="text-xs text-gray-500 mt-2">We care about your data in our privacy policy.</p>
         </div>
@@ -745,12 +850,16 @@ const LandingPage = () => {
             transition={{ duration: 0.8 }}
             className="bg-[#18182f]/80 border border-cyan-900 rounded-3xl shadow-2xl p-6 md:p-8 lg:p-12 backdrop-blur-lg"
             style={{ boxShadow: '0 0 40px 0 #0891b2, 0 2px 16px 0 #0008' }}
+            onSubmit={handleContactSubmit}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
               <div className="relative">
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  value={contactForm.name}
+                  onChange={handleInputChange}
                   className="w-full bg-[#0a0a23]/50 border border-cyan-800 rounded-xl px-4 py-3 md:py-4 text-cyan-200 placeholder-transparent focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 peer text-sm md:text-base"
                   placeholder="Your Name"
                 />
@@ -766,6 +875,9 @@ const LandingPage = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  value={contactForm.email}
+                  onChange={handleInputChange}
                   className="w-full bg-[#0a0a23]/50 border border-cyan-800 rounded-xl px-4 py-3 md:py-4 text-cyan-200 placeholder-transparent focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 peer text-sm md:text-base"
                   placeholder="Your Email"
                 />
@@ -782,6 +894,9 @@ const LandingPage = () => {
               <input
                 type="text"
                 id="subject"
+                name="subject"
+                value={contactForm.subject}
+                onChange={handleInputChange}
                 className="w-full bg-[#0a0a23]/50 border border-cyan-800 rounded-xl px-4 py-3 md:py-4 text-cyan-200 placeholder-transparent focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 peer text-sm md:text-base"
                 placeholder="Subject"
               />
@@ -796,7 +911,10 @@ const LandingPage = () => {
             <div className="relative mb-6 md:mb-8">
               <textarea
                 id="message"
+                name="message"
                 rows={6}
+                value={contactForm.message}
+                onChange={handleInputChange}
                 className="w-full bg-[#0a0a23]/50 border border-cyan-800 rounded-xl px-4 py-3 md:py-4 text-cyan-200 placeholder-transparent focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 peer resize-none text-sm md:text-base"
                 placeholder="Your Message"
               />
@@ -809,10 +927,12 @@ const LandingPage = () => {
             </div>
             
             <motion.button
+              type="submit"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-xl text-base md:text-lg shadow-lg transition-all duration-300 transform hover:shadow-cyan-500/25"
+              className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-xl text-base md:text-lg shadow-lg transition-all duration-300 transform hover:shadow-cyan-500/25 flex items-center justify-center gap-2"
             >
+              <FaWhatsapp className="text-xl" />
               Send Message
             </motion.button>
           </motion.form>
