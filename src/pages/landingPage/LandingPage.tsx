@@ -1,10 +1,22 @@
 import { motion } from 'framer-motion';
 import { FaSchool, FaUserGraduate, FaChartBar, FaSms, FaChalkboardTeacher, FaUsers, FaCheckCircle, FaRegStar, FaRocket, FaLock, FaMobileAlt, FaEnvelope, FaGlobe, FaCogs, FaBars, FaTimes } from 'react-icons/fa';
-// import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import { useState } from 'react';
+import Lottie from 'lottie-react';
+import sampleAnimation from '../../assets/lottie/sample-animation.json';
+import schoolBuildingAnimation from '../../assets/lottie/school-building.json';
+import rocketAnimation from '../../assets/lottie/rocket.json';
+import securityLockAnimation from '../../assets/lottie/security-lock.json';
+import envelopeAnimation from '../../assets/lottie/envelope.json';
+import educationAnimation from '../../assets/lottie/education.json';
+import settingsAnimation from '../../assets/lottie/settings.json';
+import studentAnimation from '../../assets/lottie/student.json';
+import analyticsAnimation from '../../assets/lottie/analytics.json';
+import smsAnimation from '../../assets/lottie/sms.json';
+import classAnimation from '../../assets/lottie/class.json';
+import staffAnimation from '../../assets/lottie/staff.json';
 
 const navLinks = [
   { label: 'Home', href: '#' },
@@ -236,18 +248,29 @@ const LandingPage = () => {
 
       {/* HERO SECTION */}
       <section className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-[#18182f] to-[#0a0a23] overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://cdn.pixabay.com/video/2015/09/27/846-140823862_large.mp4"
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#0a0a23]/80 z-10 pointer-events-none" />
         {/* Animated background blobs */}
         <motion.div
-          className="absolute top-0 left-0 w-96 h-96 bg-cyan-900 rounded-full opacity-30 blur-3xl"
+          className="absolute top-0 left-0 w-96 h-96 bg-cyan-900 rounded-full opacity-30 blur-3xl z-20"
           animate={{ x: [0, 40, 0], y: [0, 40, 0], scale: [1, 1.1, 1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-0 right-0 w-96 h-96 bg-purple-900 rounded-full opacity-30 blur-3xl"
+          className="absolute bottom-0 right-0 w-96 h-96 bg-purple-900 rounded-full opacity-30 blur-3xl z-20"
           animate={{ x: [0, -40, 0], y: [0, -40, 0], scale: [1, 1.1, 1] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div className="relative z-10 w-full flex flex-col items-center justify-center text-center px-6 py-16">
+        <div className="relative z-30 w-full flex flex-col items-center justify-center text-center px-6 py-16">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -264,6 +287,22 @@ const LandingPage = () => {
           >
             Automate. Analyze. Engage. <span className="text-cyan-400 font-bold">EduWhizz</span> is the all-in-one platform for next-generation schools.
           </motion.p>
+          
+          {/* Hero Lottie Animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="w-64 h-64 mb-8 flex items-center justify-center"
+          >
+            <Lottie
+              animationData={schoolBuildingAnimation}
+              loop={true}
+              autoplay={true}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </motion.div>
+          
           <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center w-full max-w-md">
             <motion.button
               whileHover={{ scale: 1.05, y: -3 }}
@@ -309,6 +348,23 @@ const LandingPage = () => {
           <p className="text-base md:text-lg text-gray-300 mb-6 px-4">
             EduWhizz is dedicated to simplifying school administration and amplifying learning through innovative technology. Our mission is to empower educators, engage parents, and help students thrive in a digital world.
           </p>
+          
+          {/* About Lottie Animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-48 h-48 mx-auto mb-8 flex items-center justify-center"
+          >
+            <Lottie
+              animationData={educationAnimation}
+              loop={true}
+              autoplay={true}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </motion.div>
+          
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 px-4">
             <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">AI-powered Insights</div>
             <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Seamless Automation</div>
@@ -336,7 +392,14 @@ const LandingPage = () => {
                 className="relative bg-[#18182f]/80 border border-cyan-900 rounded-2xl shadow-lg p-6 md:p-8 flex flex-col items-start backdrop-blur-lg"
               >
                 <span className="absolute -top-4 md:-top-6 left-4 md:left-6 text-3xl md:text-4xl font-extrabold text-cyan-900/30 drop-shadow-lg select-none">{service.number}</span>
-                <div className="mb-4">{service.icon}</div>
+                <div className="mb-4 w-12 h-12">
+                  {i === 0 && <Lottie animationData={settingsAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
+                  {i === 1 && <Lottie animationData={studentAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
+                  {i === 2 && <Lottie animationData={analyticsAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
+                  {i === 3 && <Lottie animationData={smsAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
+                  {i === 4 && <Lottie animationData={classAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
+                  {i === 5 && <Lottie animationData={staffAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
+                </div>
                 <h3 className="font-bold text-xl md:text-2xl mb-2 mt-2 text-cyan-300">{service.title}</h3>
                 <p className="text-gray-300 text-sm md:text-base">{service.desc}</p>
               </motion.div>
@@ -434,7 +497,25 @@ const LandingPage = () => {
               <SwiperSlide key={i}>
                 <div className="bg-[#18182f]/80 border border-purple-900 rounded-3xl shadow-2xl p-8 md:p-12 flex flex-col items-center text-center backdrop-blur-lg mx-2 transition-transform duration-300 hover:scale-105"
                   style={{ boxShadow: '0 0 40px 0 #a855f7, 0 2px 16px 0 #0008' }}>
-                  <div className="mb-6">{f.icon}</div>
+                  <div className="mb-6 w-16 h-16">
+                    {i === 0 ? (
+                      <Lottie
+                        animationData={rocketAnimation}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    ) : i === 1 ? (
+                      <Lottie
+                        animationData={securityLockAnimation}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    ) : (
+                      f.icon
+                    )}
+                  </div>
                   <h3 className="font-bold text-xl md:text-2xl mb-3 text-purple-200 drop-shadow-neon">{f.title}</h3>
                   <p className="text-gray-300 text-base md:text-lg font-medium">{f.desc}</p>
                 </div>
@@ -454,7 +535,39 @@ const LandingPage = () => {
           <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-6 md:gap-12 mb-12 md:mb-16">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center">
-                {stat.icon}
+                {i === 0 ? (
+                  <motion.div
+                    animate={{ 
+                      scale: [1, 1.1, 1],
+                      rotate: [0, 5, -5, 0]
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center"
+                  >
+                    <FaSchool className="text-white text-lg" />
+                  </motion.div>
+                ) : i === 1 ? (
+                  <motion.div
+                    animate={{ 
+                      scale: [1, 1.1, 1],
+                      y: [0, -3, 0]
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center"
+                  >
+                    <FaUserGraduate className="text-white text-lg" />
+                  </motion.div>
+                ) : (
+                  stat.icon
+                )}
                 <div className="text-2xl md:text-3xl font-bold text-cyan-300 mt-2">{stat.value}</div>
                 <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
               </div>
@@ -539,6 +652,33 @@ const LandingPage = () => {
           <div className="mb-12 md:mb-16 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Get In Touch</h2>
             <p className="text-base md:text-lg text-gray-400 px-4">Ready to transform your school? Let's start the conversation.</p>
+            
+            {/* Contact Lottie Animation */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-32 h-32 mx-auto mt-6 flex items-center justify-center"
+            >
+              <div className="relative w-24 h-24">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 5, -5, 0]
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-2xl opacity-20 blur-lg"
+                />
+                <div className="relative w-full h-full bg-gradient-to-br from-cyan-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl">
+                  <FaEnvelope className="text-white text-4xl drop-shadow-lg" />
+                </div>
+              </div>
+            </motion.div>
           </div>
           
           <motion.form 
