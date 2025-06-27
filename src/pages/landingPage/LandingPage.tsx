@@ -5,18 +5,20 @@ import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import { useState } from 'react';
 import Lottie from 'lottie-react';
-// import sampleAnimation from '../../assets/lottie/sample-animation.json';
-import schoolBuildingAnimation from '../../assets/lottie/school-building.json';
-import rocketAnimation from '../../assets/lottie/rocket.json';
-import securityLockAnimation from '../../assets/lottie/security-lock.json';
-// import envelopeAnimation from '../../assets/lottie/envelope.json';
-import educationAnimation from '../../assets/lottie/education.json';
-import settingsAnimation from '../../assets/lottie/settings.json';
-import studentAnimation from '../../assets/lottie/student.json';
-import analyticsAnimation from '../../assets/lottie/analytics.json';
-import smsAnimation from '../../assets/lottie/sms.json';
-import classAnimation from '../../assets/lottie/class.json';
-import staffAnimation from '../../assets/lottie/staff.json';
+
+// Import custom Lottie animations
+import brainAnimation from '../../assets/lottie/Brain.json';
+import stimulationModeAnimation from '../../assets/lottie/Stimulation Mode.json';
+import seminarAnimation from '../../assets/lottie/Seminar.json';
+import fileAndFolderAnimation from '../../assets/lottie/file and folder.json';
+import chatbotAnimation from '../../assets/lottie/Chatbot.json';
+import securityAnimation from '../../assets/lottie/Security.json';
+import cartAnimation from '../../assets/lottie/Cart V1.json';
+import serviceAnimation from '../../assets/lottie/Service.json';
+import learnMoreAnimation from '../../assets/lottie/Learn More.json';
+import downPaymentAnimation from '../../assets/lottie/Down Payment.json';
+import cloudAnimation from '../../assets/lottie/cloud.json';
+import arrowBottomAnimation from '../../assets/lottie/Arrow Bottom.json';
 
 const navLinks = [
   { label: 'Home', href: '#' },
@@ -289,19 +291,7 @@ const LandingPage = () => {
           </motion.p>
           
           {/* Hero Lottie Animation */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="w-64 h-64 mb-8 flex items-center justify-center"
-          >
-            <Lottie
-              animationData={schoolBuildingAnimation}
-              loop={true}
-              autoplay={true}
-              style={{ width: '100%', height: '100%' }}
-            />
-          </motion.div>
+         
           
           <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center w-full max-w-md">
             <motion.button
@@ -358,7 +348,7 @@ const LandingPage = () => {
             className="w-48 h-48 mx-auto mb-8 flex items-center justify-center"
           >
             <Lottie
-              animationData={educationAnimation}
+              animationData={seminarAnimation}
               loop={true}
               autoplay={true}
               style={{ width: '100%', height: '100%' }}
@@ -393,12 +383,54 @@ const LandingPage = () => {
               >
                 <span className="absolute -top-4 md:-top-6 left-4 md:left-6 text-3xl md:text-4xl font-extrabold text-cyan-900/30 drop-shadow-lg select-none">{service.number}</span>
                 <div className="mb-4 w-12 h-12">
-                  {i === 0 && <Lottie animationData={settingsAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
-                  {i === 1 && <Lottie animationData={studentAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
-                  {i === 2 && <Lottie animationData={analyticsAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
-                  {i === 3 && <Lottie animationData={smsAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
-                  {i === 4 && <Lottie animationData={classAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
-                  {i === 5 && <Lottie animationData={staffAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />}
+                  {i === 0 && (
+                    <Lottie
+                      animationData={fileAndFolderAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  )}
+                  {i === 1 && (
+                    <Lottie
+                      animationData={stimulationModeAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  )}
+                  {i === 2 && (
+                    <Lottie
+                      animationData={learnMoreAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  )}
+                  {i === 3 && (
+                    <Lottie
+                      animationData={chatbotAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  )}
+                  {i === 4 && (
+                    <Lottie
+                      animationData={serviceAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  )}
+                  {i === 5 && (
+                    <Lottie
+                      animationData={cloudAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  )}
                 </div>
                 <h3 className="font-bold text-xl md:text-2xl mb-2 mt-2 text-cyan-300">{service.title}</h3>
                 <p className="text-gray-300 text-sm md:text-base">{service.desc}</p>
@@ -500,14 +532,42 @@ const LandingPage = () => {
                   <div className="mb-6 w-16 h-16">
                     {i === 0 ? (
                       <Lottie
-                        animationData={rocketAnimation}
+                        animationData={brainAnimation}
                         loop={true}
                         autoplay={true}
                         style={{ width: '100%', height: '100%' }}
                       />
                     ) : i === 1 ? (
                       <Lottie
-                        animationData={securityLockAnimation}
+                        animationData={securityAnimation}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    ) : i === 2 ? (
+                      <Lottie
+                        animationData={cartAnimation}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    ) : i === 3 ? (
+                      <Lottie
+                        animationData={cloudAnimation}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    ) : i === 4 ? (
+                      <Lottie
+                        animationData={chatbotAnimation}
+                        loop={true}
+                        autoplay={true}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    ) : i === 5 ? (
+                      <Lottie
+                        animationData={serviceAnimation}
                         loop={true}
                         autoplay={true}
                         style={{ width: '100%', height: '100%' }}
@@ -535,39 +595,39 @@ const LandingPage = () => {
           <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-6 md:gap-12 mb-12 md:mb-16">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center">
-                {i === 0 ? (
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 5, -5, 0]
-                    }}
-                    transition={{ 
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center"
-                  >
-                    <FaSchool className="text-white text-lg" />
-                  </motion.div>
-                ) : i === 1 ? (
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                      y: [0, -3, 0]
-                    }}
-                    transition={{ 
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center"
-                  >
-                    <FaUserGraduate className="text-white text-lg" />
-                  </motion.div>
-                ) : (
-                  stat.icon
-                )}
+                <div className="w-12 h-12">
+                  {i === 0 ? (
+                    <Lottie
+                      animationData={seminarAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  ) : i === 1 ? (
+                    <Lottie
+                      animationData={stimulationModeAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  ) : i === 2 ? (
+                    <Lottie
+                      animationData={learnMoreAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  ) : i === 3 ? (
+                    <Lottie
+                      animationData={chatbotAnimation}
+                      loop={true}
+                      autoplay={true}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  ) : (
+                    stat.icon
+                  )}
+                </div>
                 <div className="text-2xl md:text-3xl font-bold text-cyan-300 mt-2">{stat.value}</div>
                 <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
               </div>
@@ -632,6 +692,14 @@ const LandingPage = () => {
       {/* NEWSLETTER */}
       <section className="py-12 md:py-16 px-4 bg-gradient-to-br from-[#18182f] to-[#0a0a23] border-b border-[#23234a]">
         <div className="max-w-xl mx-auto text-center">
+          <div className="w-24 h-24 mx-auto mb-6">
+            <Lottie
+              animationData={downPaymentAnimation}
+              loop={true}
+              autoplay={true}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
           <h3 className={`text-xl md:text-2xl font-bold mb-2 ${gradientText}`}>Join 100+ Subscribers</h3>
           <p className="text-gray-400 mb-6 text-sm md:text-base">Stay in the loop with everything you need to know.</p>
           <form className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -661,23 +729,12 @@ const LandingPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="w-32 h-32 mx-auto mt-6 flex items-center justify-center"
             >
-              <div className="relative w-24 h-24">
-                <motion.div
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 5, -5, 0]
-                  }}
-                  transition={{ 
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-2xl opacity-20 blur-lg"
-                />
-                <div className="relative w-full h-full bg-gradient-to-br from-cyan-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl">
-                  <FaEnvelope className="text-white text-4xl drop-shadow-lg" />
-                </div>
-              </div>
+              <Lottie
+                animationData={arrowBottomAnimation}
+                loop={true}
+                autoplay={true}
+                style={{ width: '100%', height: '100%' }}
+              />
             </motion.div>
           </div>
           
