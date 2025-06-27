@@ -168,7 +168,7 @@ const features = [
 const plans = [
   {
     name: 'Starter',
-    price: '₦100',
+    price: '₦320',
     period: '/scoresheet',
     features: [
       'Up to 50 students',
@@ -180,7 +180,7 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: '₦80',
+    price: '₦250',
     period: '/scoresheet',
     features: [
       'Up to 5000 students',
