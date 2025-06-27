@@ -95,38 +95,38 @@ const navLinks = [
 
 const specialServices = [
   {
-    title: "School Management",
-    desc: "Configure academic years, terms, and school levels. Set up sessions and manage the academic calendar with ease.",
+    title: "School Management System",
+    desc: "Comprehensive <strong>school administration software</strong> for configuring academic years, terms, and school levels. Set up sessions and manage the academic calendar with ease.",
     icon: <FaCogs className="text-cyan-400 w-10 h-10" />,
     number: "01",
   },
   {
-    title: "Student Management",
-    desc: "Add, edit, and filter students. Manage profiles, guardians, and empower students with their own dashboards.",
+    title: "Student Information System (SIS)",
+    desc: "Complete <strong>student information management</strong> - add, edit, and filter students. Manage profiles, guardians, and empower students with their own dashboards.",
     icon: <FaUserGraduate className="text-cyan-400 w-10 h-10" />,
     number: "02",
   },
   {
-    title: "Result Management",
-    desc: "Set grading systems, divisions, and automate result computation. Secure, digital, and always accessible.",
+    title: "Gradebook Management Software",
+    desc: "Advanced <strong>academic management system</strong> with automated grading systems, divisions, and result computation. Secure, digital, and always accessible.",
     icon: <FaChartBar className="text-cyan-400 w-10 h-10" />,
     number: "03",
   },
   {
-    title: "SMS Management",
-    desc: "Send instant SMS to parents and staff. Track delivery and account history in real time.",
+    title: "School Communication Platform",
+    desc: "Integrated <strong>parent communication app</strong> and <strong>teacher portal software</strong>. Send instant SMS to parents and staff. Track delivery and account history in real time.",
     icon: <FaSms className="text-cyan-400 w-10 h-10" />,
     number: "04",
   },
   {
-    title: "Class Management",
-    desc: "Create, edit, and organize classes and streams. Teachers can view and manage their class rosters effortlessly.",
+    title: "Class & Timetable Management",
+    desc: "Comprehensive <strong>timetable management software</strong> for creating, editing, and organizing classes and streams. Teachers can view and manage their class rosters effortlessly.",
     icon: <FaChalkboardTeacher className="text-cyan-400 w-10 h-10" />,
     number: "05",
   },
   {
-    title: "Staff Management",
-    desc: "Store staff details, evaluate performance, and streamline HR processes for your school.",
+    title: "HR & Payroll for Schools",
+    desc: "Complete <strong>school finance management</strong> and HR solutions. Store staff details, evaluate performance, and streamline HR processes for your school.",
     icon: <FaUsers className="text-cyan-400 w-10 h-10" />,
     number: "06",
   },
@@ -134,33 +134,33 @@ const specialServices = [
 
 const features = [
   {
-    title: 'AI Insights',
-    desc: 'Harness artificial intelligence for predictive analytics and actionable insights.',
+    title: 'AI-Powered School Analytics',
+    desc: 'Advanced <strong>school analytics and reporting</strong> with predictive analytics and actionable insights for <strong>data-driven decision making for schools</strong>.',
     icon: <FaRocket className="text-purple-400 w-12 h-12 drop-shadow-neon" />,
   },
   {
-    title: 'Bank-Grade Security',
-    desc: 'All data is encrypted and protected with industry-leading security protocols.',
+    title: 'Bank-Grade School Security',
+    desc: 'All school data is encrypted and protected with industry-leading <strong>school security software</strong> protocols including <strong>visitor management</strong> systems.',
     icon: <FaLock className="text-purple-400 w-12 h-12 drop-shadow-neon" />,
   },
   {
-    title: 'Mobile First',
-    desc: 'Access EduWhizz on any device, anywhere, anytime.',
+    title: 'Mobile-First School Software',
+    desc: 'Access EduWhizz on any device, anywhere, anytime. Complete <strong>mobile app support</strong> for <strong>parent communication app</strong> and <strong>teacher portal software</strong>.',
     icon: <FaMobileAlt className="text-purple-400 w-12 h-12 drop-shadow-neon" />,
   },
   {
-    title: 'Global Access',
-    desc: 'Multi-language, multi-currency, and timezone support for international schools.',
+    title: 'Global School Management',
+    desc: 'Multi-language, multi-currency, and timezone support for international schools. Perfect for <strong>private school software</strong> and <strong>public school management</strong>.',
     icon: <FaGlobe className="text-purple-400 w-12 h-12 drop-shadow-neon" />,
   },
   {
-    title: 'Automated Communication',
-    desc: 'Automated emails, SMS, and in-app notifications keep everyone in the loop.',
+    title: 'Automated School Communication',
+    desc: 'Automated emails, SMS, and in-app notifications keep everyone in the loop. Enhanced <strong>parent-teacher communication</strong> and <strong>school communication platform</strong>.',
     icon: <FaEnvelope className="text-purple-400 w-12 h-12 drop-shadow-neon" />,
   },
   {
-    title: 'Custom Integrations',
-    desc: 'Integrate with your favorite tools and platforms seamlessly.',
+    title: 'School System Integrations',
+    desc: 'Integrate with your favorite tools and platforms seamlessly. <strong>LMS integration for schools</strong> and <strong>e-learning platform for schools</strong> compatibility.',
     icon: <FaCogs className="text-purple-400 w-12 h-12 drop-shadow-neon" />,
   },
 ];
@@ -368,15 +368,23 @@ const LandingPage = () => {
             transition={{ duration: 1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
           >
-            The Future of School Management
+            Complete School Management System
           </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.1 }}
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-cyan-300"
+          >
+            K-12 & Higher Education Software
+          </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl px-4"
+            className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl px-4"
           >
-            Automate. Analyze. Engage. <span className="text-cyan-400 font-bold">EduWhizz</span> is the all-in-one platform for next-generation schools.
+            Transform your school with <span className="text-cyan-400 font-bold">EduWhizz</span> - the all-in-one platform for next-generation schools. Streamline operations, enhance communication, and boost efficiency for K-12, primary, secondary, and higher education institutions.
           </motion.p>
           
           {/* Hero Lottie Animation */}
@@ -427,9 +435,12 @@ const LandingPage = () => {
       {/* ABOUT SECTION */}
       <section id="about" className="py-16 md:py-20 px-4 bg-[#18182f] border-b border-[#23234a]">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${gradientText}`}>About EduWhizz</h2>
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${gradientText}`}>About EduWhizz School Management System</h2>
           <p className="text-base md:text-lg text-gray-300 mb-6 px-4">
-            EduWhizz is dedicated to simplifying school administration and amplifying learning through innovative technology. Our mission is to empower educators, engage parents, and help students thrive in a digital world.
+            EduWhizz is a comprehensive <strong>school management software</strong> designed to revolutionize how educational institutions operate. Our <strong>student information system (SIS)</strong> and <strong>school administration software</strong> solutions are tailored for K-12 schools, primary schools, secondary schools, private schools, public schools, and higher education institutions.
+          </p>
+          <p className="text-base md:text-lg text-gray-300 mb-8 px-4">
+            We solve critical challenges faced by school administrators, principals, and teachers by providing <strong>automated school processes</strong>, <strong>paperless school administration</strong>, and <strong>centralized school data</strong> management. Our platform enhances <strong>parent-teacher communication</strong>, boosts <strong>student engagement</strong>, and enables <strong>data-driven decision making for schools</strong>.
           </p>
           
           {/* About Lottie Animation */}
@@ -449,10 +460,12 @@ const LandingPage = () => {
           </motion.div>
           
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 px-4">
-            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">AI-powered Insights</div>
-            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Seamless Automation</div>
-            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Next-generation Security</div>
-            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Parent Engagement</div>
+            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">AI-powered School Analytics</div>
+            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Seamless School Automation</div>
+            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Bank-Grade School Security</div>
+            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Enhanced Parent Communication</div>
+            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Cost-Effective School Software</div>
+            <div className="bg-cyan-900/30 border border-cyan-800 rounded-xl px-4 md:px-6 py-3 md:py-4 text-cyan-300 font-semibold text-sm md:text-base">Time-Saving School Solutions</div>
           </div>
         </div>
       </section>
@@ -461,8 +474,8 @@ const LandingPage = () => {
       <section id="services" className="py-16 md:py-24 px-4 bg-gradient-to-br from-[#18182f] to-[#0a0a23] border-b border-[#23234a]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 md:mb-16 text-center">
-            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${gradientText}`}>Special Services</h2>
-            <p className="text-base md:text-lg text-gray-400 px-4">Discover the unique features that set EduWhizz apart for schools, students, and staff.</p>
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${gradientText}`}>Complete School Management Solutions</h2>
+            <p className="text-base md:text-lg text-gray-400 px-4">Comprehensive <strong>school management software</strong> features designed for K-12 schools, primary schools, secondary schools, private schools, public schools, and higher education institutions.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             {specialServices.map((service, i) => (
@@ -593,8 +606,8 @@ const LandingPage = () => {
       <section id="features" className="py-16 md:py-24 px-4 bg-[#0a0a23] border-b border-[#23234a]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 md:mb-16 text-center">
-            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${gradientText}`}>Features</h2>
-            <p className="text-base md:text-lg text-gray-400 px-4">Everything you need to run your school efficiently.</p>
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${gradientText}`}>Advanced School Management Features</h2>
+            <p className="text-base md:text-lg text-gray-400 px-4">Everything you need to run your school efficiently with <strong>automated school processes</strong>, <strong>paperless school administration</strong>, and <strong>centralized school data</strong> management.</p>
           </div>
           <Swiper
             effect="coverflow"
@@ -682,8 +695,8 @@ const LandingPage = () => {
       <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-[#18182f] to-[#0a0a23] border-b border-[#23234a]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 md:mb-16 text-center">
-            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${gradientText}`}>Our Impact</h2>
-            <p className="text-base md:text-lg text-gray-400 px-4">Trusted by leading schools and educators across Nigeria and beyond.</p>
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${gradientText}`}>Trusted by Leading Educational Institutions</h2>
+            <p className="text-base md:text-lg text-gray-400 px-4">Our <strong>school management software</strong> is trusted by K-12 schools, primary schools, secondary schools, private schools, public schools, and higher education institutions across Nigeria and beyond.</p>
           </div>
           <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-6 md:gap-12 mb-12 md:mb-16">
             {stats.map((stat, i) => (
@@ -755,8 +768,8 @@ const LandingPage = () => {
       <section id="pricing" className="py-16 md:py-24 px-4 bg-[#0a0a23] border-b border-[#23234a]">
         <div className="max-w-5xl mx-auto">
           <div className="mb-8 md:mb-12 text-center">
-            <h2 className={`text-3xl md:text-4xl font-bold mb-2 ${gradientText}`}>Pricing</h2>
-            <p className="text-gray-400 text-base md:text-lg">Simple, transparent pricing for every school size.</p>
+            <h2 className={`text-3xl md:text-4xl font-bold mb-2 ${gradientText}`}>Affordable School Management Software Pricing</h2>
+            <p className="text-gray-400 text-base md:text-lg">Simple, transparent pricing for every school size - from <strong>primary school software</strong> to <strong>university management system</strong> solutions.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {plans.map((plan, i) => (
@@ -823,8 +836,8 @@ const LandingPage = () => {
       <section id="contact" className="py-16 md:py-24 px-4 bg-gradient-to-br from-[#18182f] to-[#0a0a23] border-b border-[#23234a]">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12 md:mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Get In Touch</h2>
-            <p className="text-base md:text-lg text-gray-400 px-4">Ready to transform your school? Let's start the conversation.</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Get Started with EduWhizz School Management System</h2>
+            <p className="text-base md:text-lg text-gray-400 px-4">Ready to transform your school with our <strong>comprehensive school management software</strong>? Contact us for <strong>student information system</strong> demos, <strong>school administration software</strong> consultations, and <strong>K-12 school software</strong> implementation.</p>
             
             {/* Contact Lottie Animation */}
             <motion.div

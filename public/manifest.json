@@ -1,0 +1,27 @@
+{
+  "name": "EduWhizz - School Management System",
+  "short_name": "EduWhizz",
+  "description": "Complete school management system for K-12 and higher education institutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a23",
+  "theme_color": "#0a0a23",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/EDUWIZZ.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/EDUWIZZ.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity", "business"],
+  "lang": "en",
+  "dir": "ltr"
+} 
